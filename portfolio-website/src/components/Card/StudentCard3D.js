@@ -108,7 +108,7 @@ const StudentCard = () => {
       <Text
         position={[0, 0.8, -0.024]}
         fontSize={0.12}
-        color="#ffffff"
+        color="#0000ff"
         anchorX="center"
         anchorY="middle"
         rotation={[0, Math.PI, 0]}

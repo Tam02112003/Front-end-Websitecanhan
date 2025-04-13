@@ -1,16 +1,33 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const HeroSection = () => {
   return (
-    <section className="bg-gray-800 text-white py-20">
-      <div className="container mx-auto text-center">
-        <h1 className="text-5xl font-bold mb-4">Hello, I'm [Your Name]</h1>
-        <p className="text-xl mb-8">Frontend Developer | UI/UX Enthusiast</p>
-        <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg">
-          View My Work
-        </button>
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="bg-gray-100 py-20"
+    >
+      <div className="container mx-auto px-4">
+        <motion.h1 
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="text-4xl font-bold"
+        >
+          Welcome to My Portfolio
+        </motion.h1>
+        <motion.p 
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="mt-4 text-lg"
+        >
+          I'm a passionate developer
+        </motion.p>
       </div>
-    </section>
+    </motion.div>
   );
 };
 

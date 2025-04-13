@@ -23,7 +23,7 @@ const BodySection = () => {
     
     <section ref={ref} className="relative py-20 bg-gradient-to-b from-gray-50 to-gray-100 overflow-hidden">
 
-      <StudentCard3DViewer />
+    
 
       {/* Nội dung khác */}
       <div className="container mx-auto px-6 relative z-20">
@@ -36,6 +36,7 @@ const BodySection = () => {
           viewport={{ once: true }}
           className="bg-white p-8 rounded-xl shadow-lg mb-12 max-w-3xl ml-auto"
         >
+            <StudentCard3DViewer />
           <h2 className="text-3xl font-bold text-gray-800 mb-4">About Me</h2>
           <p className="text-gray-600 leading-relaxed">
             I'm Nguyen Minh Tam, a passionate Java Backend Developer currently pursuing Software Engineering at Ho Chi Minh City University of Technology. With 8 months of experience in Java and various web technologies, I enjoy building functional systems and exploring new technologies.

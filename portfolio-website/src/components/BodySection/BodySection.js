@@ -1,10 +1,22 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { motion} from 'framer-motion';
 import StudentCard3DViewer from '../Card/StudentCard3D';
-
+import { fetchProjects, formatDate } from '../../utils/api.js';
 const BodySection = () => {
+  const [projects, setProjects] = useState([]);
   const ref = useRef(null);
+  useEffect(() => {
+    const getProjects = async () => {
+      try {
+        const data = await fetchProjects();
+        setProjects(data);
+      } catch (error) {
+        console.error('Failed to fetch projects:', error);
+      }
+    };
 
+    getProjects();
+  }, []);
 
   // Education timeline animation
   const educationVariants = {
@@ -169,7 +181,7 @@ const BodySection = () => {
           className="bg-white p-8 rounded-xl shadow-lg mb-12"
         >
           <h2 className="text-3xl font-bold text-gray-800 mb-6">Featured Project</h2>
-          
+          {projects.length > 0 ? projects.map((project) => (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -177,13 +189,14 @@ const BodySection = () => {
             viewport={{ once: true }}
             className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg"
           >
-            <h3 className="text-2xl font-semibold text-gray-800 mb-2">Website Soccer Equipments</h3>
-            <p className="text-gray-600 mb-4">09/2024 - 12/2024</p>
+            <h3 className="text-2xl font-semibold text-gray-800 mb-2">{project.name}</h3>
+            <p className="text-gray-600 mb-4">{formatDate(project.startDate)} - {formatDate(project.endDate)}</p>
             <p className="text-gray-700 mb-4">
-              Developed a fully functional e-commerce website for selling soccer-related products, featuring user authentication, product management, shopping cart, and payment integration.
+            {project.description}
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
-              {["HTML/CSS", "JavaScript", "Bootstrap", "Java", "Spring Boot", "MySQL"].map((tech, index) => (
+              
+            {project.technologies.split(',').map((tech, index) => (
                 <motion.span
                   key={index}
                   initial={{ scale: 0 }}
@@ -197,7 +210,7 @@ const BodySection = () => {
               ))}
             </div>
             <motion.a
-              href="https://github.com/Tam02112003/DACN"
+              href={project.gitHubLink}
               target="_blank"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -206,6 +219,9 @@ const BodySection = () => {
               View on GitHub
             </motion.a>
           </motion.div>
+            )) : (
+              <p className="text-gray-600">No projects available.</p>
+            )}
         </motion.div>
 
         {/* Certificates */}

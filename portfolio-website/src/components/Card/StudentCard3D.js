@@ -27,7 +27,8 @@ const StudentCard = () => {
     spring: "#6DB33F",
     react: "#61DAFB",
     js: "#F7DF1E",
-   
+   csharp: "#68217A",
+   net:"#68217A",
   };
 
   return (
@@ -69,6 +70,37 @@ const StudentCard = () => {
       >
         Spring
       </Text>
+
+      <mesh position={[0.9, 0.05, -0.024]} rotation={[0, Math.PI, 0]}>
+        <boxGeometry args={[0.3, 0.3, 0.02]} />
+        <meshStandardMaterial color={techColors.csharp} />
+      </mesh>
+      <Text
+        position={[0.9,0.05, -0.035]}
+        fontSize={0.06}
+        color="#ffffff"
+        anchorX="center"
+        anchorY="middle"
+        rotation={[0, Math.PI, 0]}
+      >
+        C#
+      </Text>
+
+      <mesh position={[0.5, 0.05, -0.024]} rotation={[0, Math.PI, 0]}>
+        <boxGeometry args={[0.3, 0.3, 0.02]} />
+        <meshStandardMaterial color={techColors.csharp} />
+      </mesh>
+      <Text
+        position={[0.5, 0.05, -0.035]}
+        fontSize={0.06}
+        color="#ffffff"
+        anchorX="center"
+        anchorY="middle"
+        rotation={[0, Math.PI, 0]}
+      >
+        .NET
+      </Text>
+
 
       {/* Khối React */}
       <mesh position={[0.1, 0.4, -0.024]} rotation={[0, Math.PI, 0]}>

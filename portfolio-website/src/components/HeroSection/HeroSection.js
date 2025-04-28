@@ -78,7 +78,7 @@ const HeroSection = () => {
           className="text-xl md:text-2xl mb-8 text-gray-300"
           variants={itemVariants}
         >
-          Java Backend Developer
+          Software Engineer
         </motion.p>
         
         <motion.div variants={itemVariants}>

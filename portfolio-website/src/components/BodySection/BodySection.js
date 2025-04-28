@@ -2,9 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import StudentCard3DViewer from "../Card/StudentCard3D";
 import Projects from "../Project/Project.js";
+import Certificates from "../Certificate/Certificate.js";
 
 const BodySection = () => {
-
   // Education timeline animation
   const educationVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -19,10 +19,11 @@ const BodySection = () => {
   };
 
   return (
-    <section
-      className="relative py-20 bg-gradient-to-b from-gray-50 to-gray-100 overflow-hidden"
-    >
-      <div className="container mx-auto px-6 relative z-20">
+    
+    <section className="relative py-20 bg-gradient-to-b from-gray-50 to-gray-100 overflow-hidden">
+      <div className="container mx-auto px-6 relative z-20 App-body" >
+        
+        
         {/* About Me */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -34,9 +35,9 @@ const BodySection = () => {
           <StudentCard3DViewer />
           <h2 className="text-3xl font-bold text-gray-800 mb-4">About Me</h2>
           <p className="text-gray-600 leading-relaxed">
-            I'm Nguyen Minh Tam, a passionate Java Backend Developer currently
+            I'm Nguyen Minh Tam, a passionate Backend Developer currently
             pursuing Software Engineering at Ho Chi Minh City University of
-            Technology. With 8 months of experience in Java and various web
+            Technology. With 8 months of experience in Java, C# and various web
             technologies, I enjoy building functional systems and exploring new
             technologies.
           </p>
@@ -50,7 +51,7 @@ const BodySection = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
+          <h2 className="text-3xl font-bold text-center mb-12" style={{ color: 'white' }}>
             Education
           </h2>
           <div className="relative">
@@ -192,47 +193,7 @@ const BodySection = () => {
         </motion.div>
 
         <Projects />
-
-        {/* Certificates */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="bg-white p-8 rounded-xl shadow-lg"
-        >
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">
-            Certificates
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-              viewport={{ once: true }}
-              className="border-l-4 border-blue-500 pl-4 py-2"
-            >
-              <h3 className="text-xl font-semibold text-gray-800">
-                English CEFR B1
-              </h3>
-              <p className="text-gray-500">2024</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4 }}
-              viewport={{ once: true }}
-              className="border-l-4 border-emerald-500 pl-4 py-2"
-            >
-              <h3 className="text-xl font-semibold text-gray-800">
-                Communication and Teamwork Skills
-              </h3>
-              <p className="text-gray-500">2024</p>
-            </motion.div>
-          </div>
-        </motion.div>
+        <Certificates/>
       </div>
     </section>
   );

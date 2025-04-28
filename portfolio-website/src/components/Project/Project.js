@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from "react";
 import { motion } from "framer-motion";
 import Slider from "react-slick";
-import { fetchProjects, formatDate } from "../../utils/api.js";
+import { fetchProjects, formatMonthYear } from "../../utils/api.js";
 const Projects = () => {
   const [projects, setProjects] = useState([]);
   
@@ -66,7 +66,7 @@ const Projects = () => {
               {project.name}
             </h3>
             <p className="text-gray-600 mb-4">
-              {formatDate(project.startDate)} - {formatDate(project.endDate)}
+              {formatMonthYear(project.startDate)} - {formatMonthYear(project.endDate)}
             </p>
             <p className="text-gray-700 mb-4">{project.description}</p>
             <div className="flex flex-wrap gap-2 mb-4">

@@ -1,6 +1,6 @@
 // src/api/api.js
 
-const Projects_URL = 'https://localhost:7218/api/Projects/'; // Địa chỉ API của bạn
+const Projects_URL = 'https://nguyenminhtam.onrender.com/api/Projects'; // Địa chỉ API của bạn
 
 export const fetchProjects = async () => {
     try {
@@ -21,7 +21,7 @@ export const formatMonthYear = (dateString) => {
     return date.toLocaleString('default', { month: 'numeric', year: 'numeric' });
 };
 
-const Certificates_URL = 'https://localhost:7218/api/Certificates/';
+const Certificates_URL = 'https://nguyenminhtam.onrender.com/api/Certificates/';
 
 export const fetchCertificates = async () => {
     try {

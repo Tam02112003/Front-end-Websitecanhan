@@ -8,7 +8,7 @@ const StudentCard = () => {
 
   // Tải các texture
   const avatarTexture = useLoader(THREE.TextureLoader, "https://avatars.githubusercontent.com/u/153719290?v=4");
-  const qrCodeTexture = useLoader(THREE.TextureLoader, "https://ngminhtam.carrd.co/");
+  const qrCodeTexture = useLoader(THREE.TextureLoader, "https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://ngminhtam.carrd.co/");
 
   // Màu sắc thẻ
   const cardColor = "#1a365d"; // Navy blue
